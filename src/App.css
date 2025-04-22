@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.test-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.paragraph-display {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  min-height: 150px;
+  border: 1px solid #e9ecef;
+}
+
+.paragraph-display span {
+  position: relative;
+}
+
+.paragraph-display .correct {
+  color: #2ecc71;
+}
+
+.paragraph-display .incorrect {
+  color: #e74c3c;
+  text-decoration: underline;
+}
+
+.paragraph-display .current {
+  background-color: #3498db;
   color: white;
+  border-radius: 2px;
 }
 
-.App-link {
-  color: #61dafb;
+.typing-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  resize: none;
+  min-height: 120px;
+  margin-bottom: 1.5rem;
+  transition: border 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.typing-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.stat-box {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+  margin: 0 0.5rem;
+  border: 1px solid #e9ecef;
+}
+
+.stat-box:first-child {
+  margin-left: 0;
+}
+
+.stat-box:last-child {
+  margin-right: 0;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.reset-button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.reset-button:hover {
+  background: #2980b9;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  color: #3498db;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.github-link svg {
+  margin-right: 0.5rem;
+}
+
+.github-link:hover {
+  color: #2980b9;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .stats-container {
+    flex-direction: column;
+  }
+  
+  .stat-box {
+    margin: 0.5rem 0;
   }
 }
